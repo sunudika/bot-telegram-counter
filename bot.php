@@ -22,12 +22,10 @@ $botman = BotManFactory::create($configs);
 
 $botman->group(['recipient' => ['-1001307666764', '-1001184380882']], function(Botman $bot) {
 
-    $bot->hears("/parlente {nama}", function (BotMan $bot, $nama) {
-        $bot->reply("bangsad babi anjink $nama");
-    });
-
     $bot->hears("/start", function (BotMan $bot) {
-        $bot->reply("Willkommen 😊");
+        $user = $bot->getUser();
+        $firstname = $user->getFirstName();
+        $bot->reply("Willkommen $firstname 😊");
     });
 
     $bot->hears("/kenal {nama}, {npm}", function (BotMan $bot, $nama, $npm) {
@@ -37,6 +35,16 @@ $botman->group(['recipient' => ['-1001307666764', '-1001184380882']], function(B
     $bot->hears("/help", function (BotMan $bot) {
         $bot->reply("bot ini mencatat frekuensi chat setiap user" . PHP_EOL . "/start - untuk mendapat sapaan");
     });
+});
+
+$botman->hears("/start", function (BotMan $bot) {
+    $user = $bot->getUser();
+    $firstname = $user->getFirstName();
+    $bot->reply("Willkommen $firstname 😊");
+});
+
+$botman->hears("/kenal {nama}, {npm}", function (BotMan $bot, $nama, $npm) {
+    $bot->reply("Halo! $nama, $npm");
 });
 
 // $botman->hears("{coin}", function (BotMan $bot, $coin){

@@ -25,13 +25,31 @@ DriverManager::loadDriver(TelegramDriver::class);
 
 $botman = BotManFactory::create($configs);
 
+$botman->group(['recipient' => ['-1001307666764', '-1001184380882']], function(Botman $bot) {
+    $bot->hears('halo {nama}, {npm}', function(Botman $bot, $nama, $npm) {
+        $bot->reply("hOLA! $nama, $npm");
+    });
+
+    $bot->hears("nama saya {nama}", function (BotMan $bot, $nama) {
+        $bot->reply("Salam kenal $nama, saya temennya bot anjaymabar");
+    });
+
+    $bot->hears("/oi {nama}", function (BotMan $bot, $nama) {
+        $bot->reply("bangsad $nama");
+    });
+
+    $bot->hears("/kenal {nama}, {npm}", function (BotMan $bot, $nama, $npm) {
+        $bot->reply("Halo! $nama, $npm");
+    });
+});
+
 // Command
 $botman->hears("/start", function (BotMan $bot) {
     $bot->reply("Willkommen 😊");
 });
 
 $botman->hears("/help", function (BotMan $bot) {
-    $bot->reply("bot ini mencatat frekuensi chat setiap user" . PHP_EOL . "/start");
+    $bot->reply("bot ini mencatat frekuensi chat setiap user" . PHP_EOL . "/start - untuk mendapat sapaan" . PHP);
 });
 
 $botman->hears("{coin}", function (BotMan $bot, $coin){

@@ -44,7 +44,7 @@ function insertNewRow($dataUser)
     global $connection;
 
     $queryInsertUser    = "INSERT INTO chat (id_user, username, name, frequency)
-                            VALUES ('$dataUser->id_user', '$dataUser->username', '$dataUser->name', '$dataUser->frequency')";
+                            VALUES ($dataUser->id_user, '$dataUser->username', '$dataUser->name', $dataUser->frequency)";
 
     mysqli_query($connection, $queryInsertUser);
 }

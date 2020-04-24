@@ -47,7 +47,7 @@ $botman->group(['recipient' => '-1001307666764'], function(Botman $bot) { //'-10
 
     $bot->hears("/help@BitValueBot", function (BotMan $bot) {
         $bot->reply("bot ini mencatat frekuensi chat setiap user yang menggunakan command" . PHP_EOL . "/start@BitValueBot - untuk mendapat sapaan" . PHP_EOL . 
-        "/cek_data@BitValueBot - untuk melihat frekuensi chat sebuah user" . PHP_EOL . "/help@BitValueBot - untuk mendapatkan bantuan");
+        "/cek_data@BitValueBot - untuk melihat frekuensi chat semua user" . PHP_EOL . "/help@BitValueBot - untuk mendapatkan bantuan");
     });
 });
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace Chat;
+
 require_once $_SERVER['DOCUMENT_ROOT'] . 'bot-telegram-counter/database/config.php';
 
 date_default_timezone_set('Asia/Jakarta');
@@ -34,7 +36,7 @@ class Chat
 
         $queryInsertUser    = "INSERT INTO chat (id_user, username, name, frequency, created_at, updated_at)
                                 VALUES ($dataUser->id_user, $dataUser->username, $dataUser->name, $dataUser->frequency, $dataUser->created_at, $dataUser->updated_at)";
-                                
+
         mysqli_query($connection, $queryInsertUser);
     }
 

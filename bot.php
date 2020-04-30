@@ -23,33 +23,33 @@ DriverManager::loadDriver(TelegramDriver::class);
 
 $botman = BotManFactory::create($configs);
 
-// $botman->group(['recipient' => '-1001307666764'], function(Botman $bot) { //'-1001184380882' grup api
+$botman->group(['recipient' => '-1001307666764'], function(Botman $bot) { //'-1001184380882' grup api
 
-//     $bot->hears("/start@BitValueBot", function (BotMan $bot) {
-//         $user = $bot->getUser();
-//         $firstname = $user->getFirstName();
-//         $bot->reply("Willkommen $firstname 😊");
-//     });
+    $bot->hears("/start@BitValueBot", function (BotMan $bot) {
+        $user = $bot->getUser();
+        $firstname = $user->getFirstName();
+        $bot->reply("Willkommen $firstname 😊");
+    });
 
-//     $bot->hears("{chat}", function (BotMan $bot){
-//         include "functions/request.php"; 
-//     });
+    $bot->hears("{chat}", function (BotMan $bot){
+        include "functions/request.php"; 
+    });
 
-    // $bot->hears("/cek_data@BitValueBot", function (BotMan $bot){
-    //     require_once $_SERVER['DOCUMENT_ROOT'] . '/bot-telegram-counter/functions/getter.php';
-    //     $message = getMessage();
-    //     $bot->reply($message);
-    // });
+    $bot->hears("/cek_data@BitValueBot", function (BotMan $bot){
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/bot-telegram-counter/functions/getter.php';
+        $message = getMessage();
+        $bot->reply($message);
+    });
 
-//     $bot->hears("/kenal {nama}, {npm}", function (BotMan $bot, $nama, $npm) {
-//         $bot->reply("Halo! $nama, $npm");
-//     });
+    $bot->hears("/kenal {nama}, {npm}", function (BotMan $bot, $nama, $npm) {
+        $bot->reply("Halo! $nama, $npm");
+    });
 
-//     $bot->hears("/help@BitValueBot", function (BotMan $bot) {
-//         $bot->reply("bot ini mencatat frekuensi chat setiap user yang menggunakan command" . PHP_EOL . "/start@BitValueBot - untuk mendapat sapaan" . PHP_EOL . 
-//         "/cek_data@BitValueBot - untuk melihat frekuensi chat semua user" . PHP_EOL . "/help@BitValueBot - untuk mendapatkan bantuan");
-//     });
-// });
+    $bot->hears("/help@BitValueBot", function (BotMan $bot) {
+        $bot->reply("bot ini mencatat frekuensi chat setiap user yang menggunakan command" . PHP_EOL . "/start@BitValueBot - untuk mendapat sapaan" . PHP_EOL . 
+        "/cek_data@BitValueBot - untuk melihat frekuensi chat semua user" . PHP_EOL . "/help@BitValueBot - untuk mendapatkan bantuan");
+    });
+});
 
 $botman->hears("/start", function (BotMan $bot) {
     $user = $bot->getUser();

@@ -8,4 +8,4 @@ Bot ini mencatat frekuensi pengguna yang menggunakan command atau perintah yang 
   <a href="https://github.com/sunudika/bot-telegram-counter/tree/master/assets/image/preview.jpg"><img src="assets/image/preview.jpg" alt="preview-bot-telegram-counter" height="550" border="0"></a>
 </p>
 
-#### id: @BitValueBot
+#### id: @CmdCounterBot
